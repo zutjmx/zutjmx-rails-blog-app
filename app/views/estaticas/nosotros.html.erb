@@ -1,2 +1,22 @@
 <h1>Estaticas#nosotros</h1>
 <p>Find me in app/views/estaticas/nosotros.html.erb</p>
+
+<% if false%>
+    <% 1+1 %>
+    <%= 1+1 %>
+    <br/>
+    <% 5.times do |x| %>
+        <%= x %>
+    <% end %>
+<% end %>
+
+<br/>
+<%= @mensaje %>
+<br/>
+<%= "Mensaje: #{@mensaje}" %>
+
+<ul>
+    <% @usuarios.each do |usuario| %>
+        <%= "<li> #{usuario} </li>".html_safe %>
+    <% end %>
+</ul>
