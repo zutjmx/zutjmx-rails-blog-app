@@ -1,4 +1,5 @@
-<h1>Estaticas#nosotros</h1>
+<% provide(:titulo, 'Nosotros') %>
+<h1>Nosotros</h1>
 <p>Find me in app/views/estaticas/nosotros.html.erb</p>
 
 <% if false%>
@@ -14,9 +15,16 @@
 <%= @mensaje %>
 <br/>
 <%= "Mensaje: #{@mensaje}" %>
-
+<br/>
 <ul>
     <% @usuarios.each do |usuario| %>
         <%= "<li> #{usuario} </li>".html_safe %>
     <% end %>
 </ul>
+<br/>
+<%= link_to "Inicio", home_index_path %>
+<%= link_to "Contacto", estaticas_contacto_path %>
+<br/>
+<%= link_to "Contacto", 
+    { controller: 'estaticas', action: 'contacto', id: '1', user_id: '2' }         
+%>

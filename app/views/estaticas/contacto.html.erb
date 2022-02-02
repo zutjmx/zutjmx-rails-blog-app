@@ -1,2 +1,9 @@
-<h1>Estaticas#contacto</h1>
-<p>Find me in app/views/estaticas/contacto.html.erb</p>
+<% provide(:titulo, 'Contacto') %>
+<h1>Contacto</h1>
+<p>Recuperación de parámetros</p>
+<br/>
+<p>ID: <%= params['id'] %></p>
+<p>User ID: <%= params[:user_id] %></p>
+<br/>
+<p>ID: <%= @id %></p>
+<p>User ID: <%= @user_id %></p>
