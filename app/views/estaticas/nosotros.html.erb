@@ -22,9 +22,5 @@
     <% end %>
 </ul>
 <br/>
-<%= link_to "Inicio", home_index_path %>
-<%= link_to "Contacto", estaticas_contacto_path %>
-<br/>
-<%= link_to "Contacto", 
-    { controller: 'estaticas', action: 'contacto', id: '1', user_id: '2' }         
-%>
+
+<p>Fecha del sistema: <%= Time.now.strftime("%d-%m-%Y %H:%M") %></p>

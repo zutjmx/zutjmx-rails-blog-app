@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comentarios
+  resources :autors
   #get 'articulos/new'
   #get 'articulos/index'
   

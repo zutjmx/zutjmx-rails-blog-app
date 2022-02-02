@@ -1,2 +1,8 @@
-<h1>Articulos#index</h1>
-<p>Find me in app/views/articulos/index.html.erb</p>
+<h1>Articulos</h1>
+<p>Lista de artículos</p>
+
+<% @articulos.each do |articulo| %>
+    <h2><%= link_to articulo.titulo, articulo %> </h2>
+    <p><%= articulo.contenido.truncate_words(10) %></p>
+    <p><%= articulo.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+<% end %>

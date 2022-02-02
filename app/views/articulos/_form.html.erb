@@ -1,0 +1,34 @@
+<%= form_for @articulo do |f| %>
+    
+    <% if @articulo.errors.any? %>
+        <div id="errores">
+            <h2><%= pluralize(@articulo.errors.count, "errore") %> se han producido:</h2>
+
+            <ul>
+                <% @articulo.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    
+    <div class="field form-group">
+        <%= f.label :titulo %> <br/>
+        <%= f.text_field :titulo %> <br/>
+    </div>
+
+    <div class="field form-group">
+        <%= f.label :contenido %> <br/>
+        <%= f.text_area :contenido %> <br/>
+    </div>
+
+    <div class="field form-group">
+        <%= f.label :autor_id %> <br/>
+        <%= f.text_field :autor_id %> <br/>
+    </div>
+
+    <div class="actions">
+        <%= f.submit "#{@texto_boton} Artículo", disable_with: 'Submiting...', class: "btn btn-primary" %>
+    </div>
+    
+<% end %>
