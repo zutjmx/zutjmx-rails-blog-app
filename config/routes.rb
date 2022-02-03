@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :comentarios
+  devise_for :users
+  #resources :comentarios
   resources :autors
   #get 'articulos/new'
   #get 'articulos/index'
   
-  resources :articulos
+  resources :articulos do
+    resources :comentarios
+  end
 
   get 'estaticas/contacto'
   get 'estaticas/nosotros'

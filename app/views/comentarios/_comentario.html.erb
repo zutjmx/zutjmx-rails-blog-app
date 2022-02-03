@@ -10,8 +10,10 @@
   </p>
 
   <p>
-    <strong>Articulo:</strong>
-    <%= comentario.articulo_id %>
+    <strong>Articulo creado el día:</strong>
+    <%= comentario.created_at.strftime("%d-%m-%Y %H:%M") %>
   </p>
+
+  <%= button_to "Borrar", [comentario.articulo, comentario], method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
 
 </div>

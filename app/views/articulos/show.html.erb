@@ -8,3 +8,10 @@
 <br/>
 <br/>
 <%= button_to "Borrar", @articulo, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+
+<br/>
+<p><%= @articulo.comentarios.count %> Comentarios:</p>
+<%= render @articulo.comentarios %>
+<br/>
+<p>Deja tu comentario:</p>
+<%= render 'comentarios/form' %>
