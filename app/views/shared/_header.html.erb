@@ -1,17 +1,55 @@
-<ul class="nav">
-  <li class="nav-item">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    
+    <%= image_tag("rails-logo.png", width: 50) %>
     <%= link_to "Inicio", home_index_path, class:"nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to "Nuevo Artículo", new_articulo_path, class:"nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to "Lista de Artículos", articulos_path, class:"nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to "Contacto", estaticas_contacto_path, class:"nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to "Nosotros", estaticas_nosotros_path, class:"nav-link" %>
-  </li>
-</ul>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <% if user_signed_in? %>
+
+          <li class="nav-item">
+            <%= link_to "Nuevo Artículo", new_articulo_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Lista de Artículos", articulos_path, class:"nav-link" %>
+          </li>
+
+          <li class="nav-item">
+              <%= link_to "Contacto", estaticas_contacto_path, class:"nav-link" %>
+          </li>
+
+          <li class="nav-item">
+              <%= link_to "Nosotros", estaticas_nosotros_path, class:"nav-link" %>
+          </li>
+          
+          <li class="nav-item">
+            <%= link_to "Editar Usuario", edit_user_registration_path, class:"nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class:"btn btn-warning" %>
+          </li>
+          
+
+        <% else %>
+
+          <li class="nav-item">
+            <%= link_to "Iniciar Sesión", new_user_session_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Registro de Usuario", new_user_registration_path, class:"nav-link" %>
+          </li>
+        
+        <% end %>
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,10 @@
+heroku run rails db:migrate VERSION=20220202232319
+heroku run rails db:migrate VERSION=20220202184816
+heroku run rails db:migrate VERSION=20220202235044
+heroku run rails db:migrate VERSION=20220203184744
+heroku run rails db:migrate VERSION=20220203191856
+
+heroku run rails db:migrate:down VERSION=20220202232319
+
+--Este fue el bueno para crear base de datos en la app de Heroku
+heroku run rake db:schema:load
