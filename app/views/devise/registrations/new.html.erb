@@ -1,8 +1,9 @@
 <div class="card">
   
+  <%= image_tag("user.svg", width: 100) %>
   <div class="card-body">
     
-    <h2>Sign up</h2>
+    <h2>Nuevo Usuario</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -26,7 +27,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Crear usuario", class: "btn btn-primary" %>
       </div>
     <% end %>
 

@@ -1,17 +1,26 @@
-<h1><%= @articulo.titulo %></h1>
+<div class="card"
+>
+  <div class="card-body">
+    
+    <h1 class="card-title"><%= @articulo.titulo %></h1>
 
-<p><%= @articulo.contenido %></p>
+    <p class="card-text"><%= @articulo.contenido %></p>
 
-<p>Creado el día: <%= @articulo.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+    <p class="card-text">Creado el día: <%= @articulo.created_at.strftime("%d-%m-%Y %H:%M") %></p>
 
-<%= link_to "Editar", edit_articulo_path(@articulo), class: "btn btn-info" %>
-<br/>
-<br/>
-<%= button_to "Borrar", @articulo, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Editar", edit_articulo_path(@articulo), class: "btn btn-info" %>
+    <%= button_to "Borrar", @articulo, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
 
-<br/>
-<p><%= @articulo.comentarios.count %> Comentarios:</p>
-<%= render @articulo.comentarios %>
-<br/>
-<p>Deja tu comentario:</p>
-<%= render 'comentarios/form' %>
+    <br/>
+    <p class="card-text"><%= @articulo.comentarios.count %> Comentarios:</p>
+    <%= render @articulo.comentarios %>
+    
+    <br/>
+    <p class="card-text">Deja tu comentario:</p>
+    <%= render 'comentarios/form' %>
+    
+  
+  </div>
+</div>
+
+

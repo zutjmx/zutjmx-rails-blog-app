@@ -1,4 +1,6 @@
 class ArticulosController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @texto_boton = "Crear"
     @articulo = Articulo.new

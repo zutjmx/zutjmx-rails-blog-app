@@ -1,26 +1,16 @@
-<% provide(:titulo, 'Nosotros') %>
-<h1>Nosotros</h1>
-<p>Find me in app/views/estaticas/nosotros.html.erb</p>
+<% provide(:titulo, 'Acerca de ...') %>
 
-<% if false%>
-    <% 1+1 %>
-    <%= 1+1 %>
-    <br/>
-    <% 5.times do |x| %>
-        <%= x %>
-    <% end %>
-<% end %>
+<div class="card">
+  <%= image_tag("rails-logo.png", width: 200) %>
+  <div class="card-body">
+    <h2 class="card-title">Accerca de ..</h2>
+    <p class="card-text">Aplicación realizada con Ruby On Rails</p>
 
-<br/>
-<%= @mensaje %>
-<br/>
-<%= "Mensaje: #{@mensaje}" %>
-<br/>
-<ul>
-    <% @usuarios.each do |usuario| %>
-        <%= "<li> #{usuario} </li>".html_safe %>
-    <% end %>
-</ul>
-<br/>
-
-<p>Fecha del sistema: <%= Time.now.strftime("%d-%m-%Y %H:%M") %></p>
+    <div class="container">
+        <%= image_tag("github.svg", width: 50) %>
+        <%= link_to "Repo en GitHub", "https://github.com/zutjmx/zutjmx-rails-blog-app", target: "_blank", class:"btn btn-info" %>
+    </div>
+    
+    <p>Fecha del sistema: <%= Time.now.strftime("%d-%m-%Y %H:%M") %></p>
+  </div>
+</div>

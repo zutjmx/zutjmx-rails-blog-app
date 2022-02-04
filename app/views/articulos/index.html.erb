@@ -1,8 +1,39 @@
-<h1>Articulos</h1>
-<p>Lista de artículos</p>
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">Articulos</h1>
+    <p class="card-text">Lista de artículos</p>
+    <p class="card-text"><%= link_to "Crear Nuevo Artículo", new_articulo_path, class: "btn btn-secondary" %></p>
 
-<% @articulos.each do |articulo| %>
-    <h2><%= link_to articulo.titulo, articulo %> </h2>
-    <p><%= articulo.contenido.truncate_words(10) %></p>
-    <p><%= articulo.created_at.strftime("%d-%m-%Y %H:%M") %></p>
-<% end %>
+    <table class="table table-success table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr>
+        <th scope="col">Artículo</th>
+        <th scope="col">Contenido</th>
+        <th scope="col">Fecha Creación</th>
+        <th scope="col">Ver Detalle</th>
+        <th scope="col">Editar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @articulos.each do |articulo| %>
+            <tr>
+            <th scope="row"><%= link_to articulo.titulo, articulo %></th>
+            <td><%= articulo.contenido.truncate_words(10) %></td>
+            <td><%= articulo.created_at.strftime("%d-%m-%Y %H:%M") %></td>
+            <td>
+                <p>
+                <%= link_to "Ver Detalle", articulo, class: "btn btn-info" %>
+                </p>
+            </td>
+            <td>
+                <p>
+                <%= link_to "Editar éste amigo", edit_articulo_path(articulo), class: "btn btn-success" %>
+                </p>
+            </td>
+            </tr> 
+        <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,9 +1,31 @@
 <% provide(:titulo, 'Contacto') %>
-<h1>Contacto</h1>
-<p>Recuperación de parámetros</p>
-<br/>
-<p>ID: <%= params['id'] %></p>
-<p>User ID: <%= params[:user_id] %></p>
-<br/>
-<p>ID: <%= @id %></p>
-<p>User ID: <%= @user_id %></p>
+
+<div class="card">
+    <br/>
+    <div class="container">
+        <%= image_tag("zutjmx.jpg", width: 100) %>
+    </div>
+  
+    <div class="card-body">
+    <h3>Contacto:</h3>
+
+    <p class="card-text">Jesús Zúñiga Trejo</p>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <%= image_tag("github.svg", width: 50) %>
+            <%= link_to "GitHub", "https://github.com/zutjmx", target: "_blank", class:"btn btn-info" %>
+        </li>
+        <li class="list-group-item">
+            <%= image_tag("address-card.svg", width: 50) %>
+            <%= link_to "Página", "https://admiring-hermann-503fcf.netlify.app/", target: "_blank", class:"btn btn-info" %>
+        </li>
+        <li class="list-group-item">
+            <%= image_tag("linkedin.svg", width: 50) %>
+            <%= link_to "LinkedIn", "https://www.linkedin.com/in/jes%C3%BAs-z%C3%BA%C3%B1iga-trejo-512b939/", target: "_blank", class:"btn btn-info" %>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
